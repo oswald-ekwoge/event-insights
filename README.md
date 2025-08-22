@@ -104,6 +104,7 @@ dependencies = [
 pythonpath = ["src"]
 
 
+
 **Minimal FastAPI app** → src/insights_api/main.py
 
 from fastapi import FastAPI
