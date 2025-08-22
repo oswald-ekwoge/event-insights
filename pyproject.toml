@@ -1,14 +1,19 @@
+# Think of pyproject.toml as your project's recipe card. Anyone who wants to run this code just follows the recipe
+# -> same ingredients, same result.
+
 [project]
-name = "event-insights"
-version = "0.1.0"
-requires-python = ">=3.11"
-dependencies = [
-  "fastapi",
-  "uvicorn",
-  "pydantic>=2",
-  "scikit-learn",
-  "azure-functions",
+name = "event-insights"        # The name of your project
+version = "0.1.0"              # The project version (for releases)
+requires-python = ">=3.11"     # Minimum Python version required
+dependencies = [               # List of libraries the project needs
+  "fastapi",                   # For the REST API
+  "uvicorn",                   # Server to run FastAPI
+  "pydantic>=2",               # Data validation & schema handling
+  "scikit-learn",              # ML placeholder model
+  "azure-functions",           # For Azure Function runtime
 ]
 
+
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["src"]            # Configures pytest to look into /src
+
