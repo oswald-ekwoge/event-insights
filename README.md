@@ -53,7 +53,7 @@ You’ll end with:
 Establish a shared, version-controlled home for the code so anyone can reproduce the project.
 
 **Commands:**
-bash
+'''bash
 git clone https://github.com/<your-username>/event-insights.git
 cd event-insights
 
