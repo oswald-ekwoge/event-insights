@@ -57,6 +57,5 @@ Establish a shared, version-controlled home for the code so anyone can reproduce
 git clone https://github.com/<your-username>/event-insights.git
 cd event-insights
 
-Expected result:
-You are inside the new event-insights folder and git status shows a clean working tree.
+
 
