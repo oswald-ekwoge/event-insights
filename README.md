@@ -18,6 +18,60 @@ The system **ingests business events in real time**, **applies lightweight machi
 This project shows how to combine **Cloud**, **DevOps/IaC**, **Data Engineering**, and **Machine Learning** skills into a real, production-style system.
 
 ---
+## Some Definitions
+---
+- **Azure Functions:**
+  Azure Functions is a **serverless compute service** provided by Microsoft Azure. That means you can **run small pieces of code ("functions") in the cloud** **without managing** servers or infrastructure.
+  Key features include:
+  - **Event-driven**: Functions are triggered by events (your code only runs when something happens) such as:
+    - HTTP requests (APIs, webhooks)
+    - Database changes
+    - File uploads to storage
+    - Messages from queues/service buses
+    - Scheduled timers (like cron jobs)
+ - **Serverless**: You don’t worry about provisioning or scaling servers. Azure automatically takes care of it.
+ - **Pay-per-use**: You only pay for the execution time and resources consumed, not for idle server time.
+ - **Supports multiple languages**: Python, C#, Java, JavaScript/TypeScript, PowerShell, etc.
+ - **Scalable**: Automatically scales up to handle high loads and scales down when idle.
+
+So instead of running 24/7, your code sleeps until an event wakes it up.
+
+**NB**: A webhook is basically a way for one system to n**otify another system automatically** when something happens.
+👉 Instead of you asking all the time “Has anything changed?”, **the other system calls you immediately when an event happens**.
+
+---
+- **FastAPI:**
+  A modern, high-performance web framework for building APIs with Python. It is designed to be fast, easy to use, and developer-friendly, especially for creating RESTful APIs and microservices.
+  Key Features include:
+  - **Speed**: Built on top of **Starlette** (for web handling) and **Pydantic** (for data validation). It’s **one of the fastest Python frameworks**, comparable to Node.js and Go.
+  - **Automatic validation**: Input data is automatically validated based on Python type hints, thanks to Pydantic.
+  - **Auto-generated docs**: It automatically generates **interactive API documentation** (Swagger UI and ReDoc).
+  - **Asynchronous support**: Fully supports Python’s **async/await** for high-performance APIs.
+
+  🌟 **Starlette (Web Handling):**
+  - Think of Starlette as the **traffic controller of a web app**. It decides how requests (cars) come in and where they should go.
+  - For example:
+    - A user types myapi.com/hello → Starlette makes sure your hello function is called.
+    - A user sends data → Starlette delivers it to the right part of your app.
+   
+  ✅ **Pydantic (Data Validation):**
+  - Think of Pydantic as the security guard for your data.
+  - It checks if the data coming in is in the right shape and type.
+  - Example:
+    - If your app expects an age as a number, and someone sends "twenty" (a word), Pydantic says ❌ "Invalid data".
+    - If they send 20 (a number), Pydantic says ✅ "Okay, good data".
+    - It also automatically converts data when possible:
+      - Input: "20" (string)
+      - Pydantic: converts it → 20 (integer)
+
+- So in simple terms:
+👉 Pydantic makes sure the data your app receives is correct, safe, and clean before you use it.
+
+🏎️ How they work together in FastAPI
+- Starlette = handles the web request/response part (getting the car to the gate).
+- Pydantic = makes sure the data inside the request is valid (checking the passenger’s ticket).
+
+---
 
 ## 🛠️ Tech Stack
 
